@@ -21,6 +21,7 @@ gem "cancancan", "~> 1.10"
 group :development, :test do
   gem "sqlite3"
   gem "byebug"
+  gem "factory_girl_rails"
 end
 
 group :development do

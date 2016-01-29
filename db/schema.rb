@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20160129055001) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "exams", force: :cascade do |t|
-    t.integer  "status"
-    t.integer  "duration"
+    t.string   "status"
+    t.integer  "duration",        default: 20
+    t.integer  "number_question", default: 30
     t.integer  "user_id"
     t.integer  "subject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "exams", ["subject_id"], name: "index_exams_on_subject_id"
