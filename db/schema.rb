@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128083835) do
+ActiveRecord::Schema.define(version: 20160129055001) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160128083835) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "role",                default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

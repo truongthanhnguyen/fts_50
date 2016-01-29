@@ -3,34 +3,27 @@
 <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {method: :put} do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %> <i>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :current_password %> <i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit t("user.update") %>
+  <div>
+    <%= f.submit t("user.update"), class: "btn btn-default btn-primary"  %>
   </div>
 <% end %>
-
-<h3><%= t "user.cancel_my_account" %></h3>
-
-<p><%= t("layout.unhappy") %> <%= button_to t("user.cancel_my_account"),
-  registration_path(resource_name), data: {confirm: t("user.you_sure")}, method: :delete %></p>
-
-<%= link_to t("user.back"), :back %>
