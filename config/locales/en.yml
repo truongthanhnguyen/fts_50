@@ -23,6 +23,7 @@ en:
     setting: "Settings"
     error: "Error"
     unhappy: "Unhappy?"
+    account: "Account"
 
   user:
     signup: "Sign up"
