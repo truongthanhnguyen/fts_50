@@ -24,6 +24,7 @@ en:
     error: "Error"
     unhappy: "Unhappy?"
     account: "Account"
+    exams: "Exams"
 
   user:
     signup: "Sign up"
@@ -35,3 +36,12 @@ en:
     sign_in_with: "sign up with"
     name: "name"
     email: "email"
+    create_exam: "Create Exams"
+    activites: "Activities"
+  flash:
+    create_exam_sucess: "Created exam sucess"
+    create_exam_failed: "Create exam failed"
+  exams:
+    index:
+      title: "Examination List"
+

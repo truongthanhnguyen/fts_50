@@ -1,0 +1,40 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <div class="row">
+    <%= form_for @exam do |f| %>
+      <div class="col-md-4">
+        <%= f.collection_select :subject_id, @subjects, :id, :content, {},
+          class: "form-control" %>
+        <%= f.hidden_field :status, value: :start %>
+      </div>
+      <div class="col-md-3">
+        <%= f.submit t("user.create_exam"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row">
+    <h3><%= t ".list_exam" %></h3>
+    <table class="table table-condensed">
+      <tr>
+        <td><%= t ".created_date" %></td>
+        <td><%= t ".subject" %></td>
+        <td><%= t ".status" %></td>
+        <td><%= t ".duration" %></td>
+        <td><%= t ".question_number" %></td>
+        <td><%= t ".spent_time" %></td>
+        <td><%= t ".scope" %></td>
+        <td></td>
+      </tr>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td><%= exam.created_at %></td>
+          <td><%= exam.subject.content %></td>
+          <td><%= exam.status %></td>
+          <td><%= exam.duration %></td>
+          <td><%= exam.number_question %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
