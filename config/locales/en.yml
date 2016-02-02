@@ -25,6 +25,7 @@ en:
     unhappy: "Unhappy?"
     account: "Account"
     exams: "Exams"
+    contribute: "contribute"
 
   user:
     signup: "Sign up"
@@ -36,6 +37,7 @@ en:
     sign_in_with: "sign up with"
     name: "name"
     email: "email"
+    profile: "profile"
     create_exam: "Create Exams"
     activites: "Activities"
   flash:
@@ -57,3 +59,14 @@ en:
       save: "Save"
       finish: "Finish"
 
+  admin:
+    user:
+      admin: "Admin"
+      user: "User"
+      user_manage: "Manage users"
+      all_user: "All users"
+      delete: "delete"
+      you_sure: "You sure?"
+      deleted: "user have been deleted"
+      delete_failed: "delete failed"
+      view_profile: "view profile"

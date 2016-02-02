@@ -1,0 +1,14 @@
+<li>
+  <%= user.id %>
+  <%= link_to user.name, user %>
+  <%= user.email %>
+  <% unless current_user == user %>
+    <% if user.admin? %>
+      <%= t "admin.user.admin" %>
+    <% else %>
+      <%= t "admin.user.user" %>
+      <%= link_to t("admin.user.delete"), admin_user_path(user),
+        method: :delete, data: {confirm: t("admin.user.you_sure")}%>
+    <% end %>
+  <% end %>
+</li>
