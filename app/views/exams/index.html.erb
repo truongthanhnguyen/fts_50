@@ -30,9 +30,13 @@
         <tr>
           <td><%= exam.created_at %></td>
           <td><%= exam.subject.content %></td>
-          <td><%= exam.status %></td>
+          <td><%= exam_status exam %></td>
           <td><%= exam.duration %></td>
           <td><%= exam.number_question %></td>
+          <td></td>
+          <td></td>
+          <td><%= link_to exam.start? ? t("exam.start") : t("exam.view"), exam,  
+            class: "label label-primary" %></td>
         </tr>
       <% end %>
     </table>

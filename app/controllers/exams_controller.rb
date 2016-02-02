@@ -9,6 +9,7 @@ class ExamsController < ApplicationController
   end
 
   def show
+    @exam.update_attributes status: :testing if @exam.start?
   end
 
   def create
