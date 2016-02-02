@@ -44,4 +44,16 @@ en:
   exams:
     index:
       title: "Examination List"
+      created_date: "Created Date"
+      subject: "Subject"
+      status: "Status"
+      duration: "Duration"
+      question_number: "Question Nummer"
+      spent_time: "Spend Time"
+      scope: "Scope"
+      start: "Start"
+      view: "View"
+    show:
+      save: "Save"
+      finish: "Finish"
 

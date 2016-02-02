@@ -1,0 +1,12 @@
+<h3><%= @exam.created_at %></h3>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <%= form_for @exam do |f| %>
+      <ol>
+        <%= f.fields_for :results do |result| %>
+          <%= render "question", f: result %>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>
