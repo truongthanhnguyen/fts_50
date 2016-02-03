@@ -61,6 +61,10 @@ en:
     show:
       save: "Save"
       finish: "Finish"
+      time_start: "Start"
+      created_at: "Exam date: "
+      time_remain: "Remain"
+    format_time: "%H:%M:%S"
 
   admin:
     user:

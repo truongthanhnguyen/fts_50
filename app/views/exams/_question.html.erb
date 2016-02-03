@@ -2,7 +2,8 @@
   <li><strong><%= f.object.question.content %></strong></li>
   <% f.object.question.answers.each do |answer| %>
     <label class="radio">
-      <%= f.radio_button :answer_id, answer.id %>
+      <%= f.radio_button :answer_id, answer.id , 
+        disabled: f.object.exam.unchecked? or f.object.exam.checked? %>
       <%= answer.content %>
     </label>
   <% end %>

@@ -6,7 +6,7 @@ class Exam < ActiveRecord::Base
   has_many :results
   has_many :questions, through: :results
 
-  enum status: [:start, :testing, :unchecked, :checked]
+  enum status: [:start, :testing, :saved, :unchecked, :checked]
   accepts_nested_attributes_for :results
 
   before_create :add_questions
