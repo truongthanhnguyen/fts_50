@@ -1,0 +1,28 @@
+<div class="row">
+  <h1><%= t "admin.subject.all" %></h1>
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th><%= t "admin.subject.content" %></th>
+      <th><%= t "admin.subject.description" %></th>
+      <th><%= t "admin.subject.action" %></th>
+    </tr>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.id %></td>
+        <td><b><%= subject.content %></b></td>
+        <td><%= subject.description %></td>
+        <td>
+          <%= link_to t("admin.subject.edit"), edit_admin_subject_path(subject) %>
+          <%= link_to t("admin.subject.create_question"), "#" %>
+          <%= link_to t("admin.subject.delete"), admin_subject_path(subject),
+            method: :delete, data: {confirm: t("admin.subject.you_sure")} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <li>
+    <%= link_to t("admin.categoty.create_subject"), new_admin_subject_path %>
+  <li>
+</div>
+

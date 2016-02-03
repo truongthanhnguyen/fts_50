@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root "users#index"
+    root "subjects#index"
     resources :users
+    resources :subjects, except: [:show]
   end
 
   devise_for :users, only: [:session, :registration]

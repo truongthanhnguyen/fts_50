@@ -12,6 +12,9 @@ en:
     welcom1: "This is the home page of fts-50 - Project from framgia. Use"
     ruby_on_rails: "Ruby on Rails"
     welcom2: "to do this project"
+  share:
+    formcontain: "The form contains"
+    error: "error"
 
   layout:
     logo: "fts-50"
@@ -25,7 +28,7 @@ en:
     unhappy: "Unhappy?"
     account: "Account"
     exams: "Exams"
-    contribute: "contribute"
+    contribute: "suggest contribute"
 
   user:
     signup: "Sign up"
@@ -70,3 +73,20 @@ en:
       deleted: "user have been deleted"
       delete_failed: "delete failed"
       view_profile: "view profile"
+    subject:
+      subject_manage: "Manage subject"
+      all: "All subjects"
+      content: "content"
+      description: "description"
+      action: "action"
+      edit: "edit"
+      create_subject: "create subject"
+      create_question: "create question"
+      you_sure: "you sure?"
+      update_subject: "update subject"
+      savechanges: "save change"
+      new: "create new subject"
+      save: "save"
+      update_success: "update successed!"
+      destroy_success: "destroy successed!"
+      created_subject: "created subject"
