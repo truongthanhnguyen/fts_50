@@ -1,4 +1,7 @@
-<h3><%= @exam.created_at %></h3>
+<h4>
+  <%= t ".created_at" %>
+  <%= @exam.created_at %>
+</h4>
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
     <%= form_for @exam do |f| %>
@@ -7,6 +10,20 @@
           <%= render "question", f: result %>
         <% end %>
       </ol>
+      <div class="row">
+        <% if @exam.testing? or @exam.saved? %>
+          <%= f.submit t(".save"), class: "col-sm-1 col-sm-offset-1" %>
+          <%= f.submit t(".finish"), id: "finish", class: "col-sm-2 col-sm-offset-8" %>
+        <% end %>
+      </div>
     <% end %>
+  </div>
+  <div class="col-md-2 col-md-offset-1">
+    <h4><%= t ".time_remain" %></h4>
+    <p id="clock" data-time-limit="<%= @exam.duration %>"
+      data-time-start="<%= @time_start %>"
+      data-time-now="<%= Time.now.to_i %>"
+      data-status="<%= @exam.status %>"></p>
+    <p id="finish">
   </div>
 </div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, only: [:session, :registration]
-  root "static_pages#home"
+  root "exams#index"
   resources :users, only: [:show]
   resources :exams
 end
