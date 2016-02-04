@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root "subjects#index"
     resources :users
     resources :subjects, except: [:show]
+    resources :exams
   end
 
   devise_for :users, only: [:session, :registration]

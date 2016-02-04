@@ -15,6 +15,9 @@
           <%= f.submit t(".save"), class: "col-sm-1 col-sm-offset-1" %>
           <%= f.submit t(".finish"), id: "finish", class: "col-sm-2 col-sm-offset-8" %>
         <% end %>
+        <% if @exam.unchecked? && current_user.admin? %>
+          <%= f.submit t(".checked"), class: "btn btn-danger" %>
+        <% end %>
       </div>
     <% end %>
   </div>

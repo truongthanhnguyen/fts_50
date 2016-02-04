@@ -7,4 +7,11 @@
       <%= answer.content %>
     </label>
   <% end %>
+  <% if f.object.exam.checked? || (f.object.exam.unchecked? && current_user.admin?) %>
+    <% if f.object.answer.present? && f.object.answer.correct_answer %>
+      <span class="label label-primary"><%= t "exams.show.correct" %></span>
+    <% else %>
+      <span class="label label-danger"><%= t "exams.show.wrong" %></span>
+    <% end %>
+  <% end %>
 </div>

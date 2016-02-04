@@ -1,4 +1,4 @@
-module ExamHelper
+module ExamsHelper
   def exam_status exam
     if exam.start?
       content_tag :div, "#{exam.status}", class: ["label", "label-primary"]
@@ -9,6 +9,10 @@ module ExamHelper
     else
       content_tag :div, "#{exam.status}", class: ["label", "label-info"]
     end 
+  end
+
+  def exam_finish? exam
+    exam.checked? or exam.unchecked? 
   end
 
   def spent_time exam

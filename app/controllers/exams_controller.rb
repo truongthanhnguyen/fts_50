@@ -28,14 +28,22 @@ class ExamsController < ApplicationController
   end
 
   def update
-    @exam.status = params[:commit] == "Finish" ? :unchecked : :saved
+    @exam.status = case params[:commit]
+      when "Finish" then :unchecked
+      when "Checked" then :checked
+      else :saved
+    end
     @exam.time_end = Time.now.to_i
+
     if @exam.update_attributes exam_params
-      flash.now[:success] = t "flashs.finished"
-      redirect_to exams_path
+      flash.now[:success] = t "flashs.finished" 
+      if @exam.checked? && current_user.admin?
+        redirect_to admin_exams_path
+      else
+        redirect_to exams_path
+      end     
     else
       flash.now[:danger] = t "flashs.error_finished"
-      redirect_to :back
     end
   end
 

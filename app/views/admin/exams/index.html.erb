@@ -1,0 +1,37 @@
+<% provide :title, t("admin.exam.title") %>
+<div class="container">
+  <div class="row">
+    <h3><%= t ".list_exam" %></h3>
+    <table class="table table-condensed">
+      <tr>
+        <td><%= t ".created_date" %></td>
+        <td><%= t ".user" %></td>
+        <td><%= t ".subject" %></td>
+        <td><%= t ".status" %></td>
+        <td><%= t ".duration" %></td>
+        <td><%= t ".question_number" %></td>
+        <td><%= t ".spent_time" %></td>
+        <td><%= t ".scope" %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% @exams.each do |exam| %>
+      <% if exam_finish? exam %>
+      <tr>
+        <td><%= exam.created_at %></td>
+        <td><%= exam.user.name %></td>
+        <td><%= exam.subject.content %></td>
+        <td><%= exam_status exam %></td>
+        <td><%= exam.duration %></td>
+        <td><%= exam.number_question %></td>
+        <td><%= start_time exam %></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to t("exam.view"), exam,  
+          class: "label label-primary" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </table>
+  </div>
+</div>
