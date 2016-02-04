@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202083206) do
+ActiveRecord::Schema.define(version: 20160204053403) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
-    t.integer  "correct_answer"
+    t.boolean  "correct_answer"
     t.integer  "question_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 20160202083206) do
     t.string   "content"
     t.integer  "question_type"
     t.integer  "subject_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "status",        default: 0
+    t.integer  "user_id"
   end
 
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id"

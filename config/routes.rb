@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root "exams#index"
   resources :users, only: [:show]
   resources :exams
+  resources :questions, except: [:show]
 end

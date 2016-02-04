@@ -1,2 +1,9 @@
-  NUMBER_QUESTIONS: 10
-  MINUTE: 60
+NUMBER_QUESTIONS: 10
+MINUTE: 60
+NUMBER_QUESTIONS: 10
+
+question:
+  types:
+    single: "single_choice"
+    multiple: "multiple_choices"
+    text: "text"
