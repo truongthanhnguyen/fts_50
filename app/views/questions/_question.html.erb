@@ -1,0 +1,20 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.content %></td>
+  <td><%= question.subject.content %></td>
+  <td><%= question.question_type %></td>
+  <td><%= question_status question %></td>
+  <td>
+    <% question.answers.each do |answer| %>
+      <li>
+        <%= answer.content %>
+        <%= answer.correct_answer %>
+      </li>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to t("question.edit"), edit_question_path(question) %>
+    <%= link_to t("question.delete"), question_path(question),
+      method: :delete, data: {confirm: t("question.you_sure")} %>
+  </td>
+</tr>

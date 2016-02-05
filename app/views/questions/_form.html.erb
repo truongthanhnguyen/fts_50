@@ -1,0 +1,37 @@
+<%= form_for @question do |f| %>
+  <%= render "shared/error_messages", object: @question %>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><%= f.label :question %></td>
+        <td><%= f.text_field :content, class: "form-control type" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :question_type %></td>
+        <td>
+          <%= f.select :question_type, options_for_select(Settings.question.types,
+            params[:question_type]), {}, {class: "form-control question-type"}  %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :subject_id %></td>
+        <td><%= f.collection_select :subject_id, @subjects, :id, :content, {},
+          class: "form-control" %></td>
+      </tr>
+      <div id="answers">
+        <%= f.fields_for :answers do |answer_form| %>
+          <%= render "answer_form", f: answer_form  %>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <div class="option-answers row">
+    <button class="add_answer btn btn-primary btn-sm" name="answers">
+      <%= t "question.add_answer" %>
+    </button>
+  </div>
+  <div class="row">
+    <%= f.submit t("question.save"), class: "submit-word btn btn-primary pull-right" %>
+  </div>
+  <%= add_fields_answer f, :answers %>
+<% end %>
