@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = current_user.questions.paginate page: params[:page]
+    @subjects = Subject.all
   end
 
   def create
