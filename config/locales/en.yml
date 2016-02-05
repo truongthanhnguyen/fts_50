@@ -66,6 +66,26 @@ en:
       time_remain: "Remain"
     format_time: "%H:%M:%S"
 
+  question:
+    success: "success"
+    update_success: "updated success"
+    deleted: "deleted success"
+    edit: "edit"
+    delete: "delete"
+    you_sure: "you sure?"
+    create_question: "create question"
+    all_question: "All question"
+    id: "id"
+    content: "content"
+    subject: "subject"
+    type: "type"
+    status: "status"
+    answers: "answers"
+    action: "action"
+    save: "save"
+    add_answer: "add answers"
+    remove: "remove"
+
   admin:
     user:
       admin: "Admin"
