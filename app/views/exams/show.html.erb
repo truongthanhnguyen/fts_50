@@ -1,7 +1,14 @@
-<h4>
-  <%= t ".created_at" %>
-  <%= @exam.created_at %>
-</h4>
+<div class="row">
+  <h4>
+    <%= t ".created_at" %>
+    <%= @exam.created_at %>
+  </h4>
+  <h5>
+    <%= t ".score" %>
+    <%= exam_score @exam %>
+  </h5>
+</div>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
     <%= form_for @exam do |f| %>

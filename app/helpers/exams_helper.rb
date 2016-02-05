@@ -15,6 +15,14 @@ module ExamsHelper
     exam.checked? or exam.unchecked? 
   end
 
+  def exam_score exam
+    if exam.checked?
+      content_tag :div, "#{exam.results.correct.size}/#{exam.questions.size}"
+    else
+      content_tag :div, "0/#{exam.questions.size}"
+    end
+  end
+
   def spent_time exam
     if exam.time_end - exam.time_start < exam.duration * Settings.MINUTE
       time = exam.time_end - exam.time_start

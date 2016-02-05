@@ -3,6 +3,7 @@ class ExamsController < ApplicationController
   def index
     @subjects = Subject.all 
     @exam = Exam.new
+    @exams = current_user.exams
   end
 
   def new
