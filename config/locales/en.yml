@@ -67,6 +67,7 @@ en:
       time_remain: "Remain"
       correct: "Correct answer"
       wrong: "Wrong answer"
+      score: "SCORE"
     format_time: "%H:%M:%S"
 
   question:
