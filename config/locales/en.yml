@@ -61,9 +61,12 @@ en:
     show:
       save: "Save"
       finish: "Finish"
+      checked: "Checked"
       time_start: "Start"
       created_at: "Exam date: "
       time_remain: "Remain"
+      correct: "Correct answer"
+      wrong: "Wrong answer"
     format_time: "%H:%M:%S"
 
   question:
@@ -114,3 +117,16 @@ en:
       update_success: "update successed!"
       destroy_success: "destroy successed!"
       created_subject: "created subject"
+    exam:
+      exam_check: "Check exams"
+      title: "Examination List"
+      created_date: "Created Date"
+      subject: "Subject"
+      status: "Status"
+      duration: "Duration"
+      question_number: "Question Nummer"
+      spent_time: "Spend Time"
+      scope: "Scope"
+      start: "Start"
+      view: "View"
+      user: "User"
