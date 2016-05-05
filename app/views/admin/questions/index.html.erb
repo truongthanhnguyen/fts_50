@@ -1,0 +1,12 @@
+
+<% @questions.each do |question| %>
+<tr>
+  <td><%= question.created_at %></td>
+  <td><%#= question.user.name %></td>
+  <td><%= question.subject.content %></td>
+  <td><%= question.content %></td>
+  <td><%= question_status question %></td>
+  <td><%= link_to t(".view"), admin_question_path(question),
+          class: "label label-primary" %></td>
+</tr>
+<% end %>

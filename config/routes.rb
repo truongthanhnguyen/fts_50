@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users
     resources :subjects, except: [:show]
     resources :exams
+    resources :questions
   end
 
   devise_for :users, only: [:session, :registration]

@@ -5,6 +5,8 @@
       <tr>
         <td><%= f.label :question %></td>
         <td><%= f.text_field :content, class: "form-control type" %></td>
+        <td><%= f.hidden_field :status,
+          value: :accepted if current_user.admin? %></td>
       </tr>
       <tr>
         <td><%= f.label :question_type %></td>

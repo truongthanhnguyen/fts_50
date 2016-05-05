@@ -1,0 +1,13 @@
+<%= form_for [:admin, @question] do |f| %>
+  <%= render "shared/error_messages", object: @question %>
+
+  <li><strong><%= f.object.content %></strong></li>
+  <% f.object.answers.each do |answer| %>
+    <%= f.label :answer_id, answer.id %>
+    <%= answer.content %>
+    <%= f.hidden_field :status, value: :accepted %>
+  <% end %>
+  <% if @question.waitting? %>
+    <%= f.submit t("question.accept"), class: "btn btn-danger" %>
+  <% end %>
+<% end %>

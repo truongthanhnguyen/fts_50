@@ -89,6 +89,7 @@ en:
     save: "save"
     add_answer: "add answers"
     remove: "remove"
+    accept: "accept"
 
   admin:
     user:
@@ -131,3 +132,5 @@ en:
       start: "Start"
       view: "View"
       user: "User"
+    question:
+      question_check: "Check questions"
